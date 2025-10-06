@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@tailwind utilities;
+
+:root {
+  --bg: #fafafa;
+  --text: #111827;
+  --accent: #F59E0B; /* Amber */
+}
+
+.dark:root, :root.dark {
+  --bg: #0b0b0c;
+  --text: #e5e7eb;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); }
+
