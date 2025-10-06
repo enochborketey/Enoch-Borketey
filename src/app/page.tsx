@@ -2,11 +2,11 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Github, ChevronRight, ExternalLink, ArrowDownRight, X, Phone, MessageCircle, Sun, Moon } from "lucide-react";
+import { Mail, Github, ChevronRight, ExternalLink, ArrowDownRight, X, Phone, MessageCircle, } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useTheme } from "@/components/theme-provider";
+import Image from "next/image";
 
 /**
  * Enoch Borketey Borlabi — Modern & Minimal Portfolio (Single-File React)
@@ -23,9 +23,8 @@ import { useTheme } from "@/components/theme-provider";
  * - Subtle Motion via Framer Motion
  */
 
-const ACCENT = "#F59E0B"; // Amber
-const EMAIL = "enochborketeyborlabi@gmail.com";
-const PHOTO_URL = "/meee.png"; // Your profile photo
+const _ACCENT = "#F59E0B"; // Amber
+const _IMAGE = "/meee.png"; // Your profile photo
 
 // Contact details
 const CONTACT_DETAILS = {
@@ -45,20 +44,11 @@ const Pill: React.FC<React.PropsWithChildren<{ className?: string }>> = ({ class
   <span className={`inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/80 px-3 py-1 text-xs text-neutral-600 shadow-sm backdrop-blur dark:border-neutral-700 dark:bg-neutral-900/80 dark:text-neutral-300 ${className || ""}`}>{children}</span>
 );
 
-const Anchor = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <a href={href} className="text-neutral-900 underline-offset-4 transition hover:text-neutral-600 hover:underline dark:text-neutral-100 dark:hover:text-neutral-300">
-    {children}
-  </a>
-);
 
 // Contact Modal Component
 const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
-  const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text);
-    // You could add a toast notification here
-  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
@@ -182,7 +172,7 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
 
 export default function PortfolioSite() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+
 
   return (
     <div className="min-h-screen scroll-smooth bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
@@ -190,7 +180,7 @@ export default function PortfolioSite() {
       <header className="sticky top-0 z-40 w-full border-b border-neutral-200 bg-white/80 backdrop-blur dark:border-neutral-800 dark:bg-neutral-900/80">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3 md:px-10">
           <div className="flex items-center gap-2 font-semibold">
-            <span className="h-2.5 w-2.5 rounded-full" style={{ background: ACCENT }} />
+            <span className="h-2.5 w-2.5 rounded-full" style={{ background: _ACCENT }} />
             <span>Enoch B. Borlabi</span>
           </div>
           <div className="hidden items-center gap-6 text-sm md:flex">
@@ -200,17 +190,7 @@ export default function PortfolioSite() {
             <a href="#contact" className="hover:text-neutral-600 dark:hover:text-neutral-300">Contact</a>
           </div>
           <div className="hidden items-center gap-2 md:flex">
-            <Button
-              onClick={() => toggleTheme()}
-              variant="outline"
-              className="rounded-full border-neutral-200 bg-white text-neutral-900 hover:bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:hover:bg-neutral-800"
-            >
-              {theme === "dark" ? (
-                <span className="inline-flex items-center gap-2"><Sun className="h-4 w-4" /> Light</span>
-              ) : (
-                <span className="inline-flex items-center gap-2"><Moon className="h-4 w-4" /> Dark</span>
-              )}
-            </Button>
+          
             <Button 
               onClick={() => setIsContactModalOpen(true)}
               className="rounded-full border border-neutral-200 bg-white text-neutral-900 hover:bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:hover:bg-neutral-800"
@@ -225,7 +205,7 @@ export default function PortfolioSite() {
       <div className="relative overflow-hidden">
         {/* abstract dev background */}
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -right-40 top-[-10%] h-[520px] w-[520px] rounded-full opacity-20 blur-2xl" style={{ background: ACCENT }} />
+          <div className="absolute -right-40 top-[-10%] h-[520px] w-[520px] rounded-full opacity-20 blur-2xl" style={{ background: _ACCENT }} />
           <svg className="absolute bottom-0 right-0 h-64 w-96 opacity-10" viewBox="0 0 400 300" aria-hidden>
             <defs>
               <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
@@ -246,13 +226,13 @@ export default function PortfolioSite() {
         <Section className="grid grid-cols-1 items-center gap-10 pb-20 pt-16 md:grid-cols-2 md:gap-12 md:pb-28 md:pt-24">
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <Pill className="mb-4">
-              <span className="h-2 w-2 rounded-full" style={{ background: ACCENT }} />
+              <span className="h-2 w-2 rounded-full" style={{ background: _ACCENT }} />
               <span>Available for hire</span>
             </Pill>
             <h1 className="mb-4 text-4xl font-bold leading-tight tracking-tight md:text-6xl">
-              Hi, I’m Enoch Borketey Borlabi
+              Hi, I&apos;m Enoch Borketey Borlabi
             </h1>
-            <h2 className="mb-6 text-2xl font-semibold md:text-3xl" style={{ color: ACCENT }}>
+            <h2 className="mb-6 text-2xl font-semibold md:text-3xl" style={{ color: _ACCENT }}>
               Software Engineer
             </h2>
             <p className="mb-8 max-w-xl text-lg text-neutral-700 dark:text-neutral-300">
@@ -276,10 +256,10 @@ export default function PortfolioSite() {
 
           {/* Photo */}
           <motion.div initial={{ opacity: 0, scale: .97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.1 }} className="relative mx-auto w-full max-w-lg">
-            <div className="absolute -right-6 -top-6 h-32 w-32 rounded-full opacity-30 blur-xl" style={{ background: ACCENT }} />
+            <div className="absolute -right-6 -top-6 h-32 w-32 rounded-full opacity-30 blur-xl" style={{ background: _ACCENT }} />
             <div className="relative rounded-[2rem] border border-neutral-200 bg-white p-3 shadow-lg dark:border-neutral-800 dark:bg-neutral-900">
               <div className="aspect-square overflow-hidden rounded-[1.6rem] bg-neutral-100 dark:bg-neutral-800">
-                <img src={PHOTO_URL} alt="Enoch portrait" className="h-full w-full object-cover object-center" />
+                <Image src={_IMAGE} alt="Enoch portrait" fill className="h-full w-full object-cover object-center" />
               </div>
             </div>
           </motion.div>
@@ -299,7 +279,7 @@ export default function PortfolioSite() {
               </CardHeader>
               <CardContent className="space-y-4 text-neutral-700 dark:text-neutral-300">
                 <p>
-                  I’m a passionate Software Engineer focused on building clean, scalable applications for the web and mobile. My approach combines technical depth with design thinking ensuring every product is not only functional but user‑focused.
+                  I&apos;m a passionate Software Engineer focused on building clean, scalable applications for the web and mobile. My approach combines technical depth with design thinking ensuring every product is not only functional but user focused.
                 </p>
                 <p>
                   I thrive in collaborative team environments and bring value, innovation, and reliability to every company I work with.
@@ -325,12 +305,12 @@ export default function PortfolioSite() {
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
                 <span>VirtuPro — Professional Networking & Portfolios</span>
-                <Badge className="bg-neutral-900" style={{ background: ACCENT }}>Full‑Stack</Badge>
+                <Badge className="bg-neutral-900" style={{ background: _ACCENT }}>Full‑Stack</Badge>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 text-neutral-700 dark:text-neutral-300">
               <p>
-                VirtuPro is a professional networking and portfolio platform built for creators and businesses. I developed it as a full‑stack web application using <strong>React</strong>, <strong>Node.js</strong>, and <strong>MongoDB</strong>, focusing on scalability, performance, and a clean UI.
+                VirtuPro is a professional networking and portfolio platform built for creators and businesses. I developed it as a fullstack web application using <strong>React</strong>, <strong>Node.js</strong>, and <strong>MongoDB</strong>, focusing on scalability, performance, and a clean UI.
               </p>
               <p>
                 Result: a responsive and intuitive platform that helps users showcase their skills and connect with opportunities.
@@ -362,7 +342,7 @@ export default function PortfolioSite() {
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
                 <span>African Beat — Cultural Entertainment Platform</span>
-                <Badge className="bg-neutral-900" style={{ background: ACCENT }}>Full‑Stack</Badge>
+                <Badge className="bg-neutral-900" style={{ background: _ACCENT }}>FullStack</Badge>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 text-neutral-700 dark:text-neutral-300">
@@ -436,11 +416,11 @@ export default function PortfolioSite() {
       <Section id="contact" className="pb-24">
         <div className="rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm md:p-12 dark:border-neutral-800 dark:bg-neutral-900">
           <div className="mb-6 flex items-center gap-3">
-            <span className="inline-block h-2.5 w-2.5 rounded-full" style={{ background: ACCENT }} />
-            <h3 className="text-xl font-semibold">Let’s build something together</h3>
+            <span className="inline-block h-2.5 w-2.5 rounded-full" style={{ background: _ACCENT }} />
+            <h3 className="text-xl font-semibold">Let&apos;s build something together</h3>
           </div>
           <p className="mb-6 max-w-2xl text-neutral-700 dark:text-neutral-300">
-            Interested in working together or hiring me for your team? I’m always open to exciting opportunities and collaborations.
+            Interested in working together or hiring me for your team? I&apos;m always open to exciting opportunities and collaborations.
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <Button 

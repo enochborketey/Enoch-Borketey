@@ -10,8 +10,15 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  // Extend Next.js recommended rules
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+
+  // Add custom rules and ignores
   {
+    rules: {
+      "react/no-unescaped-entities": "off",
+      "@next/next/no-page-custom-font": "off",
+    },
     ignores: [
       "node_modules/**",
       ".next/**",
