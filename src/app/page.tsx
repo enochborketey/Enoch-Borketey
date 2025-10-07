@@ -589,19 +589,8 @@ export default function PortfolioSite() {
                     View Project <ExternalLink className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="rounded-full border-neutral-300 bg-white text-neutral-900 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100"
-                >
-                  <a
-                    href="https://github.com/enochborketey"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    View Code <Github className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
+              
+               
               </div>
             </CardContent>
           </Card>
