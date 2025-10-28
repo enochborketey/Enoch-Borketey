@@ -16,8 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import {NOONES_IMAGES}  from "../lib/images";
-
+import { NOONES_IMAGES, AWARD_IMAGES } from "../lib/images";
 
 type ExperienceItem = {
   role: string;
@@ -377,7 +376,8 @@ export default function PortfolioSite() {
               Software Engineer / Community Manager
             </h2>
             <p className="mb-8 max-w-xl text-lg text-neutral-700 dark:text-neutral-300">
-            I connect code and community—shipping scalable apps and leading programs that onboard, educate, and grow users.
+              I connect code and community—shipping scalable apps and leading
+              programs that onboard, educate, and grow users.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <Button
@@ -428,7 +428,7 @@ export default function PortfolioSite() {
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-3">
           <div className="md:col-span-1">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-neutral-500">
-              About
+              About Me
             </h3>
           </div>
           <div className="md:col-span-2">
@@ -438,15 +438,39 @@ export default function PortfolioSite() {
                   Turning ideas into reliable, elegant digital products.
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 text-neutral-700 dark:text-neutral-300">
+              <CardContent className="space-y-7 text-neutral-700 dark:text-neutral-300">
                 <p>
-                I'm a software developer and community manager building scalable, user-focused web 
-                and mobile apps while growing engaged, educated communities around them.
-
+                  I’m a Full Stack Developer with over 3 years of experience
+                  building web and mobile applications that blend functionality,
+                  performance, and great design. I’m passionate about creating
+                  digital experiences that don’t just work — they feel right. I
+                  specialize in React.js and Next.js for crafting clean,
+                  responsive user interfaces, and I build solid, scalable
+                  backends using modern frameworks and APIs. My work focuses on
+                  delivering intuitive solutions that bring ideas to life and
+                  make technology more human. Over the years, I’ve developed and
+                  deployed several live projects, including: Africanbeat — a
+                  cultural entertainment platform in Australia that celebrates
+                  African artistry and events. VirtuProGhana — a professional
+                  service portal connecting businesses and experts across Ghana.
                 </p>
                 <p>
-                  I thrive in collaborative team environments and bring value,
-                  innovation, and reliability to every company I work with.
+                  In 2024, I joined Code Club Academy, where I led a team to
+                  design and build a smart walking stick for visually impaired
+                  individuals. We showcased our innovation at DI-HACK, a
+                  Hackathon in Accra — and proudly won 1st Runner-Up. That
+                  experience deepened my passion for tech that empowers and
+                  transforms lives. Then in October 2025, I partnered with Nissi
+                  Diallo to develop an AI-powered learning app designed to help
+                  students learn faster and smarter. The project won Most
+                  Innovative Project at our Codetrain graduation and was
+                  featured on Metro TV, Ghana News, and Citi News — a milestone
+                  that reinforced my commitment to building technology that
+                  makes an impact. I thrive in collaborative, creative
+                  environments and love working with teams that push the
+                  boundaries of what’s possible. My goal is to keep learning,
+                  keep building, and keep creating digital solutions that
+                  inspire, empower, and connect people.
                 </p>
               </CardContent>
             </Card>
@@ -589,8 +613,6 @@ export default function PortfolioSite() {
                     View Project <ExternalLink className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
-              
-               
               </div>
             </CardContent>
           </Card>
@@ -649,7 +671,7 @@ export default function PortfolioSite() {
         <Card className="rounded-2xl border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
-              <span>NoOnes — Community Manager Collaboration</span>
+              <span>NoOnes — Community Manager Intenship</span>
               <Badge className="bg-neutral-900" style={{ background: _ACCENT }}>
                 Community
               </Badge>
@@ -657,7 +679,7 @@ export default function PortfolioSite() {
           </CardHeader>
           <CardContent className="space-y-4 text-neutral-700 dark:text-neutral-300">
             <p>
-              I Collaborated with a NoOnes Ambassador in Ghana to organize an
+              I inten with the NoOnes Ambassador in Ghana to organize an
               educational meetup in Accra, teaching blockchain fundamentals,
               wallet safety, and P2P best practices to new community members.
             </p>
@@ -667,15 +689,15 @@ export default function PortfolioSite() {
             {/* Highlights */}
             <ul className="list-disc space-y-2 pl-5">
               <li>
-                Co-hosted agenda, outreach, and venue logistics for the Accra
+               I  Co-hosted agenda, outreach, and venue logistics for the Accra
                 session.
               </li>
               <li>
-                Facilitated demos on onboarding, self-custody basics, and safe
+             I Facilitated demos on onboarding, self-custody basics, and safe
                 P2P flows.
               </li>
               <li>
-                Gathered feedback to improve newcomer experience and support
+              I  Gathered feedback to improve newcomer experience and support
                 channels.
               </li>
               {/* Replace with real numbers when ready */}
@@ -697,7 +719,7 @@ export default function PortfolioSite() {
       </Section>
 
       {/*Charisword Gospel Ministry*/}
-      <Section  className="pb-12 md:pb-20">
+      <Section className="pb-12 md:pb-20">
         <Card className="rounded-2xl border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
           <CardHeader>
             <CardTitle>Leadership & Community</CardTitle>
@@ -738,30 +760,61 @@ export default function PortfolioSite() {
         </Card>
       </Section>
 
-       {/*Community Activities*/}
-       <Section  className="pb-12 md:pb-20">
+      {/*Community Activities*/}
+      <Section className="pb-12 md:pb-20">
         <Card className="rounded-2xl border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
           <CardHeader>
             <CardTitle>Community Activities</CardTitle>
           </CardHeader>
           <CardContent>
-          <div className="grid grid-cols-3 gap-3 md:grid-cols-2">
-          {NOONES_IMAGES.map((img, i) => (
-            <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-xl">
-              <Image
-                src={img.src}           // static import object
-                alt={img.alt}
-                fill                     // let it fill the tile
-                sizes="(max-width: 768px) "
-                className="object-cover"
-                priority={i === 0}       // optional: eager-load first image
-              />
+            <div className="grid grid-cols-3 gap-3 md:grid-cols-2">
+              {NOONES_IMAGES.map((img, i) => (
+                <div
+                  key={i}
+                  className="relative aspect-[4/3] overflow-hidden rounded-xl"
+                >
+                  <Image
+                    src={img.src} // static import object
+                    alt={img.alt}
+                    fill // let it fill the tile
+                    sizes="(max-width: 768px) "
+                    className="object-cover"
+                    priority={i === 0} // optional: eager-load first image
+                  />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
           </CardContent>
         </Card>
       </Section>
+
+         {/*Awards*/}
+         <Section className="pb-12 md:pb-20">
+         <Card className="rounded-2xl border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
+           <CardHeader>
+             <CardTitle>Awards</CardTitle>
+           </CardHeader>
+           <CardContent>
+             <div className="grid grid-cols-3 gap-3 md:grid-cols-2">
+               {AWARD_IMAGES.map((img, i) => (
+                 <div
+                   key={i}
+                   className="relative aspect-[4/3] overflow-hidden rounded-xl"
+                 >
+                   <Image
+                     src={img.src} // static import object
+                     alt={img.alt}
+                     fill // let it fill the tile
+                     sizes="(max-width: 768px) 33vw, 50vw"
+                     className="object-cover"
+                     priority={i === 0} // optional: eager-load first image
+                   />
+                 </div>
+               ))}
+             </div>
+           </CardContent>
+         </Card>
+       </Section>
 
       {/* CONTACT */}
       <Section id="contact" className="pb-24">
